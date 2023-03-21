@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Buscar Álbumes de Spotify</h1>
+  <form method="POST">
+    <label for="artist">Artista:</label>
+    <input type="text" name="artist" id="artist" required>
+    <button type="submit">Buscar</button>
+  </form>
+
+  {% if albums %}
+    <h2>Resultados para "{{ artist_name }}"</h2>
+    <div class="albums">
+      {% for album in albums %}
+        <a href="{{ album.external_urls.spotify }}" target="_blank" class="album">
+          <img src="{{ album.images[0].url }}" alt="{{ album.name }}">
+          <p>{{ album.name }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}

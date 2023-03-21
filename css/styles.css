@@ -1,0 +1,17 @@
+.album-covers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.album-covers img {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.album-covers img:hover {
+    transform: scale(1.1);
+}
